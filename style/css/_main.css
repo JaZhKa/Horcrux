@@ -1,0 +1,20 @@
+body {
+  font-family: Macondo;
+  display: flex;
+  flex-direction: column;
+}
+body .header {
+  background-color: #16064f;
+}
+body .header .header__logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 10%;
+}
+body .header .header__logo:hover {
+  background: radial-gradient(circle closest-side, #2900bc, #16064f);
+}
+body .header .header__logo img {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=_main.css.map */
