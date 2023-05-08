@@ -1,0 +1,19 @@
+@import 'variables';
+
+@import 'mixins';
+
+main{
+  .main-wrapper{
+    .field{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      @include text-style(1.2em);
+      column-gap: 10px;
+      border: $text-color solid 8px;
+      border-radius: 10px;
+      margin: 20px;
+      box-shadow: 0 0 20px gold;
+    }
+  }
+}

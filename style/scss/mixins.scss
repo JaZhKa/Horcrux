@@ -1,0 +1,7 @@
+@import 'variables';
+
+@mixin text-style($fz){
+  font-family: Macondo;
+  color: $text-color;
+  font-size: $fz;
+}

@@ -1,0 +1,44 @@
+html,
+body {
+  font-family: Macondo;
+  height: calc(100% - 1px);
+}
+html .wrapper,
+body .wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+html .wrapper header,
+body .wrapper header {
+  background-color: #16064f;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 50px black;
+  z-index: 10;
+  font-family: Macondo;
+  color: gold;
+  font-size: 2em;
+}
+html .wrapper main,
+body .wrapper main {
+  flex: 1 1 auto;
+  background-color: #2e0fa1;
+  display: flex;
+  align-content: stretch;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  flex: 0 1 20%;
+  margin-left: 0;
+}
+
+.right {
+  flex: 0 1 20%;
+  margin-right: 0;
+}/*# sourceMappingURL=main.css.map */

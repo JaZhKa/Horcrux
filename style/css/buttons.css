@@ -1,0 +1,12 @@
+body .wrapper header .header__navigation .header__nav__btn {
+  background: rgba(255, 255, 255, 0);
+  border: 0;
+  font-family: Macondo;
+  color: gold;
+  font-size: 1em;
+}
+body .wrapper header .header__navigation .header__nav__btn:hover {
+  -moz-text-shadow: 0 0 10px rgb(255, 232, 103);
+  -webkit-text-shadow: 0 0 10px rgb(255, 232, 103);
+  text-shadow: 0 0 10px rgb(255, 232, 103);
+}/*# sourceMappingURL=buttons.css.map */
