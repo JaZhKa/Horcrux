@@ -6,7 +6,6 @@ body {
 			.header__logo {
 				width: 100px;
 				height: 100px;
-				border-radius: 10%;
 				&:hover {
 					background: $hover-radial-gredient;
 				}
@@ -23,14 +22,31 @@ body {
 						.face{
 							.img{
 								flex: 1 1 auto;
+								border-radius: 5px;
+								border-bottom:rgb(105, 75, 0) solid 2px;
+								height: 230px;
 								overflow: hidden;
 								img{
 									width: 100%;
-									height: 230px;
-									border-radius: 5px;
 								}
 							}
 						}
+					}
+				}
+			}
+		}
+		footer{
+			.footer__logo{
+				width: 50px;
+				height: 50px;
+				border-right: gold 2px solid;
+				margin-right: 50px;
+				padding-right: 50px;
+				img{
+					width: 100%;
+					height: 100%;
+					&:hover{
+						background: $hover-radial-gredient;
 					}
 				}
 			}

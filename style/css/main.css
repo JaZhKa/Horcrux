@@ -22,6 +22,7 @@ body .wrapper header {
   font-family: Macondo;
   color: gold;
   font-size: 2em;
+  text-shadow: 1px 1px 1px rgb(135, 119, 29);
 }
 html .wrapper main,
 body .wrapper main {
@@ -31,6 +32,21 @@ body .wrapper main {
   align-content: stretch;
   justify-content: center;
   align-items: center;
+}
+html .wrapper footer,
+body .wrapper footer {
+  background-color: #16064f;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -10px 30px black;
+  z-index: 10;
+  font-family: Macondo;
+  color: gold;
+  font-size: 1em;
+  text-shadow: 1px 1px 1px rgb(135, 119, 29);
 }
 
 .left {

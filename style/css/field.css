@@ -1,3 +1,8 @@
+main .main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 main .main-wrapper .field {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -5,9 +10,11 @@ main .main-wrapper .field {
   font-family: Macondo;
   color: gold;
   font-size: 1.2em;
+  text-shadow: 1px 1px 1px rgb(135, 119, 29);
   column-gap: 10px;
   border: gold solid 8px;
   border-radius: 10px;
   margin: 20px;
   box-shadow: 0 0 20px gold;
+  max-width: 60%;
 }/*# sourceMappingURL=field.css.map */

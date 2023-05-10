@@ -4,6 +4,9 @@
 
 main{
   .main-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .field{
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -14,6 +17,7 @@ main{
       border-radius: 10px;
       margin: 20px;
       box-shadow: 0 0 20px gold;
+      max-width: 60%;
     }
   }
 }

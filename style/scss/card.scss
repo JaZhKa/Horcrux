@@ -6,7 +6,7 @@ main{
   .main-wrapper{
     .field{
       .card{
-        max-width: 165px;
+        max-width: 100%;
         .face{
           display: flex;
           flex-direction: column;
@@ -21,7 +21,7 @@ main{
         .card-info{
           p{
             text-align: justify;
-            
+            @include text-style(1em);
           }
         }
       }

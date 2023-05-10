@@ -29,6 +29,17 @@ body {
 			justify-content: center;
 			align-items: center;
 		}
+    footer{
+      background-color: $primary-main-color;
+			display: flex;
+			flex-direction: row;
+			align-content: center;
+			justify-content: center;
+			align-items: center;
+			box-shadow: 0 -10px 30px black;
+			z-index: 10;
+      @include text-style(1em);
+    }
 	}
 }
 
