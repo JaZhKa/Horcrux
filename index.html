@@ -12,6 +12,7 @@
 		/>
 		<script src="./js/jquery-3.6.4.min.js"></script>
 		<script src="./js/script.js"></script>
+		<script src="./js/cards.js"></script>
 		<link
 			rel="icon"
 			href="./image/icons/favicon.ico"
@@ -27,10 +28,14 @@
 		<div class="wrapper">
 			<header class="header">
 				<div class="left"></div>
-				<div class="header__logo">
-					<img src="/image/logo/logoRing.png" />
+				<a href="#">
+					<div class="header__logo">
+						<img src="/image/logo/logoRing.png" />
+					</div>
+				</a>
+				<div class="timer">
+					<span id="mins"></span><span>:</span><span id="secs"></span>
 				</div>
-				<div class="timer">00:00</div>
 				<div class="header__navigation">
 					<nav>
 						<button class="header__nav__btn">Restart</button>
@@ -53,8 +58,10 @@
 									/>
 								</div>
 								<div class="card-info">
-									<p>Harry Potter <br />
-									The Boy Who Lived.</p>
+									<p>
+										Harry Potter<br />
+										The Boy Who Lived.
+									</p>
 								</div>
 							</div>
 						</div>
@@ -70,8 +77,10 @@
 									/>
 								</div>
 								<div class="card-info">
-									<p>Ronald Weasley <br />
-									"You'll pay for that one, Malfoy!"</p>
+									<p>
+										Ronald Weasley<br />
+										"You'll pay for that one, Malfoy!"
+									</p>
 								</div>
 							</div>
 						</div>
@@ -87,8 +96,10 @@
 									/>
 								</div>
 								<div class="card-info">
-									<p>Hermione Granger <br />
-									"But why's she got to go to the library?"</p>
+									<p>
+										Hermione Granger<br />
+										"But why's she got to go to the library?"
+									</p>
 								</div>
 							</div>
 						</div>
@@ -104,8 +115,10 @@
 									/>
 								</div>
 								<div class="card-info">
-									<p>Professor Rubeus Hagrid <br />
-									Hagrid stood at eleven feet, six inches tall.</p>
+									<p>
+										Professor Rubeus Hagrid<br />
+										Hagrid stood at eleven feet, six inches tall.
+									</p>
 								</div>
 							</div>
 						</div>
@@ -121,8 +134,10 @@
 									/>
 								</div>
 								<div class="card-info">
-									<p>Draco Malfoy<br />
-									He looked down on half-bloods and Muggle-borns.</p>
+									<p>
+										Draco Malfoy<br />
+										He looked down on half-bloods and Muggle-borns.
+									</p>
 								</div>
 							</div>
 						</div>
@@ -146,11 +161,17 @@
 				</div>
 			</main>
 			<footer class="footer">
-				<div class="logo"><div class="footer__logo">
-					<img src="/image/logo/logoRing.png" />
-				</div></div>
-				<div class="info">by JaZhKa<br />
-					github.com</div>
+				<div class="logo">
+					<a href="#">
+						<div class="footer__logo">
+							<img src="/image/logo/logoRing.png" />
+						</div>
+					</a>
+				</div>
+				<div class="info">
+					by JaZhKa<br />
+					<a href="https://github.com/JaZhKa">github.com</a>
+				</div>
 			</footer>
 		</div>
 	</body>

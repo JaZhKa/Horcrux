@@ -39,6 +39,15 @@ body {
 			box-shadow: 0 -10px 30px black;
 			z-index: 10;
       @include text-style(1em);
+			a {
+				@include text-style(1em);
+				text-decoration: none;
+				&:hover {
+					-moz-text-shadow: $hover-button;
+					-webkit-text-shadow: $hover-button;
+					text-shadow: $hover-button;
+				}
+			}
     }
 	}
 }

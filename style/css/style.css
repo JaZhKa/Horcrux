@@ -102,6 +102,20 @@ body .wrapper footer {
   font-size: 1em;
   text-shadow: 1px 1px 1px rgb(135, 119, 29);
 }
+html .wrapper footer a,
+body .wrapper footer a {
+  font-family: Macondo;
+  color: gold;
+  font-size: 1em;
+  text-shadow: 1px 1px 1px rgb(135, 119, 29);
+  text-decoration: none;
+}
+html .wrapper footer a:hover,
+body .wrapper footer a:hover {
+  -moz-text-shadow: 0 0 10px rgb(255, 232, 103);
+  -webkit-text-shadow: 0 0 10px rgb(255, 232, 103);
+  text-shadow: 0 0 10px rgb(255, 232, 103);
+}
 
 .left {
   flex: 0 1 20%;
