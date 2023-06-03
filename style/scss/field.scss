@@ -8,16 +8,20 @@ main{
     align-items: center;
     justify-content: center;
     .field{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      @include text-style(1.2em);
-      column-gap: 10px;
-      border: $text-color solid 8px;
-      border-radius: 10px;
-      margin: 20px;
-      box-shadow: 0 0 20px gold;
-      max-width: 60%;
+      display: flex;
+      justify-content: center;
+      .cards{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        @include text-style(1.2em);
+        column-gap: 10px;
+        border: $text-color solid 8px;
+        border-radius: 10px;
+        margin: 20px;
+        box-shadow: 0 0 20px gold;
+        max-width: 60%;
+      }
     }
   }
 }

@@ -5,6 +5,9 @@
 main{
   .main-wrapper{
     .field{
+      .card.template{
+        display: none;
+      }
       .card{
         max-width: 100%;
         .face{

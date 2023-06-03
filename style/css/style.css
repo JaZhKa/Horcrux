@@ -183,6 +183,10 @@ main .main-wrapper {
   justify-content: center;
 }
 main .main-wrapper .field {
+  display: flex;
+  justify-content: center;
+}
+main .main-wrapper .field .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -198,6 +202,9 @@ main .main-wrapper .field {
   max-width: 60%;
 }
 
+main .main-wrapper .field .card.template {
+  display: none;
+}
 main .main-wrapper .field .card {
   max-width: 100%;
 }

@@ -38,16 +38,24 @@ $(function () {
 		}
 	}
 
-	function drawCards() {
+	function drawCards(index) {
 		const copyOfCardTag = $('.card.template').clone();
 		copyOfCardTag.removeClass('template');
-		copyOfCardTag.find('.name').text(cards.name);
-		copyOfCardTag.find('.description').text(cards.description);
-		copyOfCardTag.find('img').attr('src', cards.img);
+		copyOfCardTag.find('.name').text(cards[index].name);
+		copyOfCardTag.find('.description').text(cards[index].description);
+		copyOfCardTag.find('img').attr('src', cards[index].img);
 		$('.cards').append(copyOfCardTag);
 	}
 
-	
+	function reDrawUsers() {
+		$('.cards').empty();
+		for (let index = 0; index < getRandomCard().length; index++) {
+			const card = getRandomCard();
+			drawCards(card[index]);
+			console.log(card)
+		}
+	}
+	reDrawUsers()
 });
 
 // function getNonRepeatCards() {
