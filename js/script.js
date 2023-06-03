@@ -1,6 +1,4 @@
 $(function () {
-	const cards = [];
-
 	function getTimer() {
 		let mins = $('#mins'),
 			secs = $('#secs'),
@@ -22,25 +20,33 @@ $(function () {
 
 	const idCards = [];
 	function getRandomCard() {
-		for(let i = 0; i < 3; i++) {
+		for (let i = 0; i < 3; i++) {
 			idCards.push(getRandomNum(0, 5));
 		}
 		return getNonRepeatCards();
 	}
-	
+
 	function getNonRepeatCards() {
 		let nonRepeatCards = Array.from(new Set(idCards));
-		if(nonRepeatCards.length < 3) {
-			return getRandomCard()
-		 } else if(nonRepeatCards.length > 3) {
-			nonRepeatCards.length = 3
+		if (nonRepeatCards.length < 3) {
+			return getRandomCard();
+		} else if (nonRepeatCards.length > 3) {
+			nonRepeatCards.length = 3;
 			return nonRepeatCards;
-		 } else {
-		return nonRepeatCards;
+		} else {
+			return nonRepeatCards;
+		}
 	}
-};
 
-	console.log(getRandomCard())
+	function drawCards() {
+		const copyOfCardTag = $('.card.template').clone();
+		copyOfCardTag.removeClass('template');
+		copyOfCardTag.find('.name').text(cards.name);
+		copyOfCardTag.find('.description').text(cards.description);
+		copyOfCardTag.find('img').attr('src', cards.img);
+		$('.cards').append(copyOfCardTag);
+	}
+
 	
 });
 
