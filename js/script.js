@@ -47,15 +47,38 @@ $(function () {
 		$('.cards').append(copyOfCardTag);
 	}
 
-	function reDrawUsers() {
+	function reDrawCards() {
 		$('.cards').empty();
-		for (let index = 0; index < getRandomCard().length; index++) {
-			const card = getRandomCard();
+		const card = getRandomCard();
+		for (let index = 0; index < card.length; index++) {
 			drawCards(card[index]);
-			console.log(card)
 		}
 	}
-	reDrawUsers()
+	reDrawCards();
+
+	function multiplyCards() {
+		$('.card').clone().appendTo('.cards');
+	}
+	multiplyCards();
+
+	function cardRandomSwap() {
+		const cardsElems = $('.card');
+		if (cardsElems.length >= 6) {
+			randomIndex1 = getRandomNum(0, 5)
+			randomIndex2 = getRandomNum(0, 6)
+			while (randomIndex1 === randomIndex2) {
+				randomIndex2 = getRandomNum(0, 5)
+			}
+			firstElement = cardsElems.eq(randomIndex1);
+			secondElement = cardsElems.eq(randomIndex2);
+			if (randomIndex1 < randomIndex2) {
+				firstElement.before(secondElement);
+			} else {
+				firstElement.after(secondElement);
+			}
+		}
+	}
+	cardRandomSwap();
 });
 
 // function getNonRepeatCards() {
