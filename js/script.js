@@ -1,4 +1,5 @@
 $(function () {
+	const idCards = [];
 	function getTimer() {
 		let mins = $('#mins'),
 			secs = $('#secs'),
@@ -18,7 +19,6 @@ $(function () {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
-	const idCards = [];
 	function getRandomCard() {
 		for (let i = 0; i < 3; i++) {
 			idCards.push(getRandomNum(0, 5));
@@ -43,7 +43,7 @@ $(function () {
 		copyOfCardTag.removeClass('template');
 		copyOfCardTag.find('.name').text(cards[index].name);
 		copyOfCardTag.find('.description').text(cards[index].description);
-		copyOfCardTag.find('img').attr('src', cards[index].img);
+		copyOfCardTag.find('.front-img').attr('src', cards[index].img);
 		$('.cards').append(copyOfCardTag);
 	}
 
@@ -64,10 +64,10 @@ $(function () {
 	function cardRandomSwap() {
 		const cardsElems = $('.card');
 		if (cardsElems.length >= 6) {
-			randomIndex1 = getRandomNum(0, 5)
-			randomIndex2 = getRandomNum(0, 6)
+			randomIndex1 = getRandomNum(0, 5);
+			randomIndex2 = getRandomNum(0, 6);
 			while (randomIndex1 === randomIndex2) {
-				randomIndex2 = getRandomNum(0, 5)
+				randomIndex2 = getRandomNum(0, 5);
 			}
 			firstElement = cardsElems.eq(randomIndex1);
 			secondElement = cardsElems.eq(randomIndex2);

@@ -2,32 +2,43 @@
 
 @import 'mixins';
 
-main{
-  .main-wrapper{
-    .field{
-      .card.template{
-        display: none;
-      }
-      .card{
-        max-width: 100%;
-        .face{
-          display: flex;
-          flex-direction: column;
-          border: 5px solid rgb(105, 75, 0);
-          border-radius: 10px;
-          box-shadow: 5px 5px 10px black;
-          margin: 5px;
-          align-items: center;
-          max-width: 100%;
-          height: 300px;
-        }
-        .card-info{
-          p{
-            text-align: justify;
-            @include text-style(1em);
-          }
-        }
-      }
-    }
-  }
+main {
+	.main-wrapper {
+		.field {
+			.card.template {
+				display: none;
+			}
+			.card {
+				max-width: 100%;
+				.face {
+					display: flex;
+					flex-direction: column;
+					border: 10px solid rgb(105, 75, 0);
+					border-radius: 10px;
+					box-shadow: 5px 5px 10px black;
+					margin: 5px;
+					align-items: center;
+					max-width: 100%;
+					height: 300px;
+					.card-back {
+						width: 100%;
+						height: 100%;
+						overflow: hidden;
+						z-index: 10;
+						border-radius: 5px;
+						.back {
+							width: 100%;
+							height: 100%;
+						}
+					}
+					.card-info {
+						p {
+							text-align: justify;
+							@include text-style(1em);
+						}
+					}
+				}
+			}
+		}
+	}
 }
