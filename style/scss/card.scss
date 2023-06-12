@@ -30,8 +30,6 @@ main {
 							width: 100%;
 							height: 100%;
 						}
-					}
-					.card-info {
 						p {
 							text-align: justify;
 							@include text-style(1em);

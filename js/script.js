@@ -79,6 +79,11 @@ $(function () {
 		}
 	}
 	cardRandomSwap();
+
+	$('.face').on('click', function(event){
+		$(this).find('.img, .card-info, .card-back').toggleClass('active');
+		
+	})
 });
 
 // function getNonRepeatCards() {

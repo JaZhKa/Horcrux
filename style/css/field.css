@@ -6,11 +6,12 @@ main .main-wrapper {
 main .main-wrapper .field {
   display: flex;
   justify-content: center;
+  flex: 1 1 100px;
 }
 main .main-wrapper .field .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 230px);
+  grid-template-rows: repeat(2, 340px);
   font-family: Macondo;
   color: gold;
   font-size: 1.2em;
@@ -20,5 +21,4 @@ main .main-wrapper .field .cards {
   border-radius: 10px;
   margin: 20px;
   box-shadow: 0 0 20px gold;
-  max-width: 60%;
 }/*# sourceMappingURL=field.css.map */

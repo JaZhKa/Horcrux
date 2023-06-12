@@ -33,6 +33,10 @@ body .wrapper main {
   justify-content: center;
   align-items: center;
 }
+html .wrapper main .active,
+body .wrapper main .active {
+  display: none;
+}
 html .wrapper footer,
 body .wrapper footer {
   background-color: #16064f;

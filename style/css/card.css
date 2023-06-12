@@ -26,7 +26,7 @@ main .main-wrapper .field .card .face .card-back .back {
   width: 100%;
   height: 100%;
 }
-main .main-wrapper .field .card .face .card-info p {
+main .main-wrapper .field .card .face .card-back p {
   text-align: justify;
   font-family: Macondo;
   color: gold;

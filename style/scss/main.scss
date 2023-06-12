@@ -28,6 +28,9 @@ body {
 			align-content: stretch;
 			justify-content: center;
 			align-items: center;
+			.active{
+				display: none;
+			}
 		}
     footer{
       background-color: $primary-main-color;
