@@ -1,5 +1,8 @@
 $(function () {
 	const idCards = [];
+	const delay = 1 * 1000;
+	let activeCardName = '';
+
 	function getTimer() {
 		let mins = $('#mins'),
 			secs = $('#secs'),
@@ -80,10 +83,32 @@ $(function () {
 	}
 	cardRandomSwap();
 
-	$('.face').on('click', function(event){
-		$(this).find('.img, .card-info, .card-back').toggleClass('active');
-		
-	})
+	function cardFlipChecker(event) {
+		const cardShirt = $(event.currentTarget).find('.card-back'),
+			cardFront = $(event.currentTarget).find('.img, .card-info'),
+			cardName = $(event.currentTarget).find('.name').text();
+		cardShirt.addClass('active');
+		cardFront.removeClass('active');
+		if (activeCardName) {
+			if (cardName == activeCardName) {
+				$('.face').each(() => {
+					$('.face').find('.card-back.active').addClass('guessed');
+					$('.face').find('.img:not(.active), .card-info:not(.active)').addClass('guessed');
+				});
+			} else {
+				setTimeout(() => {
+					$('.face').each(() => {
+						$('.face').find('.card-back:not(.guessed)').removeClass('active');
+						$('.face').find('.img:not(.guessed), .card-info:not(.guessed)').addClass('active');
+					})
+				}, delay);
+			}
+			activeCardName = '';
+		} else {
+			activeCardName = cardName;
+		}
+	}
+	$('.face').click(cardFlipChecker);
 });
 
 // function getNonRepeatCards() {
