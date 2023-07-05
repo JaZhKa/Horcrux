@@ -15,6 +15,10 @@ $(function () {
 			minsVal = Math.floor(timer / 60);
 			secs.text(secsVal < 10 ? '0' + secsVal.toString() : secsVal);
 			mins.text(minsVal < 10 ? '0' + minsVal.toString() : minsVal);
+			let amountGuessed = $('.card-back.guessed').length;
+			if (amountGuessed === 6) {
+				clearInterval(timerInterval);
+			}
 		}, 1000);
 	}
 
@@ -91,16 +95,24 @@ $(function () {
 		cardFront.removeClass('active');
 		if (activeCardName) {
 			if (cardName == activeCardName) {
+				const cardShirtActive = $('.face').find('.card-back.active'),
+					cardFrontNonActive = $('.face').find(
+						'.img:not(.active), .card-info:not(.active)'
+					);
 				$('.face').each(() => {
-					$('.face').find('.card-back.active').addClass('guessed');
-					$('.face').find('.img:not(.active), .card-info:not(.active)').addClass('guessed');
+					cardShirtActive.addClass('guessed');
+					cardFrontNonActive.addClass('guessed');
 				});
 			} else {
+				const cardShirtGuessed = $('.face').find('.card-back:not(.guessed)'),
+					cardFrontGuessed = $('.face').find(
+						'.img:not(.guessed), .card-info:not(.guessed)'
+					);
 				setTimeout(() => {
 					$('.face').each(() => {
-						$('.face').find('.card-back:not(.guessed)').removeClass('active');
-						$('.face').find('.img:not(.guessed), .card-info:not(.guessed)').addClass('active');
-					})
+						cardShirtGuessed.removeClass('active');
+						cardFrontGuessed.addClass('active');
+					});
 				}, delay);
 			}
 			activeCardName = '';
@@ -108,7 +120,15 @@ $(function () {
 			activeCardName = cardName;
 		}
 	}
-	$('.face').click(cardFlipChecker);
+
+	function init() {
+		getTimer();
+		reDrawCards();
+		multiplyCards();
+		cardRandomSwap();
+		$('.face').click(cardFlipChecker);
+	}
+	init();
 });
 
 // function getNonRepeatCards() {
@@ -120,3 +140,32 @@ $(function () {
 // 	});
 // 	return nonRepeatCards.length != 3 ? getRandomCard() : nonRepeatCards;
 // }
+
+// Шаг 1: Подготовка ингредиентов
+var mushrooms = 500; // количество грибов в граммах
+var onion = 1; // количество луковицы
+var garlic = 2; // количество зубчиков чеснока
+var butter = 30; // количество грамм сливочного масла
+var broth = 500; // количество миллилитров куриного или овощного бульона
+var cream = 200; // количество миллилитров сливок для взбивания
+var salt = 'по вкусу'; // количество соли
+var pepper = 'по вкусу'; // количество перца и других специй
+
+// Шаг 2: Приготовление супа
+console.log('Шаг 1: Подготовка ингредиентов');
+console.log('Шаг 2: Приготовление супа');
+console.log('- Разогрейте сливочное масло в кастрюле');
+console.log(
+	'- Добавьте нарезанный лук и чеснок, обжарьте до золотистого цвета'
+);
+console.log('- Добавьте грибы, обжаривайте до мягкости');
+console.log('- Влейте бульон, доведите до кипения');
+console.log('- Уменьшите огонь и варите на среднем огне примерно 15-20 минут');
+console.log(
+	'- Используйте блендер или ступку для измельчения супа до гладкой консистенции'
+);
+console.log('- Добавьте сливки и продолжайте готовить еще 5 минут');
+console.log('- Приправьте солью, перцем и другими специями по вкусу');
+console.log('- Подайте горячим, украсив зеленью');
+
+console.log('Готово! Сливочно-грибной суп готов к подаче.');
