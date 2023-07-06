@@ -167,7 +167,7 @@ body .wrapper footer .footer__logo img:hover {
   background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.262745098), #16064f);
 }
 
-body .wrapper header .header__navigation .header__nav__btn {
+body button {
   background: rgba(255, 255, 255, 0);
   border: 0;
   font-family: Macondo;
@@ -175,10 +175,11 @@ body .wrapper header .header__navigation .header__nav__btn {
   font-size: 1em;
   text-shadow: 1px 1px 1px rgb(135, 119, 29);
 }
-body .wrapper header .header__navigation .header__nav__btn:hover {
+body button:hover {
   -moz-text-shadow: 0 0 10px rgb(255, 232, 103);
   -webkit-text-shadow: 0 0 10px rgb(255, 232, 103);
   text-shadow: 0 0 10px rgb(255, 232, 103);
+  cursor: pointer;
 }
 
 main .main-wrapper {
@@ -202,8 +203,8 @@ main .main-wrapper .field .cards {
   column-gap: 10px;
   border: gold solid 8px;
   border-radius: 10px;
-  margin: 20px;
   box-shadow: 0 0 20px gold;
+  margin: 20px;
 }
 
 main .main-wrapper .field .card.template {
@@ -222,6 +223,7 @@ main .main-wrapper .field .card .face {
   align-items: center;
   max-width: 100%;
   height: 300px;
+  cursor: pointer;
 }
 main .main-wrapper .field .card .face .card-back {
   width: 100%;
@@ -240,6 +242,62 @@ main .main-wrapper .field .card .face .card-back p {
   color: gold;
   font-size: 1em;
   text-shadow: 1px 1px 1px rgb(135, 119, 29);
+}
+
+.modal {
+  position: fixed;
+  background-color: #16064f;
+  z-index: 20;
+  border: gold solid 8px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px gold;
+}
+.modal .modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.modal .modal-wrapper .congratulation {
+  font-family: Macondo;
+  color: gold;
+  font-size: 3em;
+  text-shadow: 1px 1px 1px rgb(135, 119, 29);
+  margin: 50px 100px 50px 100px;
+}
+.modal .modal-wrapper .scores {
+  font-family: Macondo;
+  color: gold;
+  font-size: 2.5em;
+  text-shadow: 1px 1px 1px rgb(135, 119, 29);
+  margin: 50px;
+  text-align: center;
+}
+.modal .modal-wrapper .scores .value-time {
+  margin: 0 0 20px 0;
+}
+.modal .modal-wrapper .scores .value-scores {
+  margin: 20px 0 0 0;
+}
+.modal .modal-wrapper .navigation {
+  margin: 50px 100px 50px 100px;
+}
+.modal .modal-wrapper .navigation nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: Macondo;
+  color: gold;
+  font-size: 2em;
+  text-shadow: 1px 1px 1px rgb(135, 119, 29);
+}
+.modal .modal-wrapper .navigation nav .modal-btn-leaders {
+  margin: 0 30px 0 0;
+}
+.modal .modal-wrapper .navigation nav .modal-btn-restart {
+  margin: 0 0 0 30px;
 }
 
 @font-face {

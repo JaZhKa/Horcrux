@@ -17,10 +17,8 @@ main{
         grid-template-rows: repeat(2, 340px);
         @include text-style(1.2em);
         column-gap: 10px;
-        border: $text-color solid 8px;
-        border-radius: 10px;
+        @include border-style();
         margin: 20px;
-        box-shadow: 0 0 20px gold;
       }
     }
   }

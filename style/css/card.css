@@ -14,6 +14,7 @@ main .main-wrapper .field .card .face {
   align-items: center;
   max-width: 100%;
   height: 300px;
+  cursor: pointer;
 }
 main .main-wrapper .field .card .face .card-back {
   width: 100%;

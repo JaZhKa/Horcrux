@@ -6,3 +6,9 @@
   font-size: $fz;
   text-shadow: 1px 1px 1px rgb(135, 119, 29);
 }
+
+@mixin border-style(){
+  border: $text-color solid 8px;
+  border-radius: 10px;
+  box-shadow: $element-shadow;
+}

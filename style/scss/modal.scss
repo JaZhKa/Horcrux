@@ -1,0 +1,48 @@
+@import 'variables.scss';
+
+@import 'mixins';
+
+.modal{
+  position: fixed;
+  background-color: $primary-main-color;
+  z-index: 20;
+  @include border-style();
+  .modal-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: center;
+    .congratulation{
+      @include text-style(3em);
+      margin: 50px 100px 50px 100px;
+    }
+    .scores{
+      @include text-style(2.5em);
+      margin: 50px;
+      text-align: center;
+      .value-time{
+        margin: 0 0 20px 0;
+      }
+      .value-scores{
+        margin: 20px 0 0 0;
+      }
+    }
+    .navigation{
+      margin: 50px 100px 50px 100px;
+      nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        @include text-style(2em);
+        .modal-btn-leaders{
+          margin: 0 30px 0 0;
+        }
+        .modal-btn-restart{
+          margin: 0 0 0 30px;
+        }
+      }
+    }
+  }
+}
