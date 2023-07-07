@@ -1,4 +1,14 @@
-.modal {
+.overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 15;
+}
+.overlay .modal {
+  display: none;
   position: fixed;
   background-color: #16064f;
   z-index: 20;
@@ -6,21 +16,21 @@
   border-radius: 10px;
   box-shadow: 0 0 20px gold;
 }
-.modal .modal-wrapper {
+.overlay .modal .modal-wrapper {
   display: flex;
   flex-direction: column;
   align-content: stretch;
   justify-content: space-evenly;
   align-items: center;
 }
-.modal .modal-wrapper .congratulation {
+.overlay .modal .modal-wrapper .congratulation {
   font-family: Macondo;
   color: gold;
   font-size: 3em;
   text-shadow: 1px 1px 1px rgb(135, 119, 29);
   margin: 50px 100px 50px 100px;
 }
-.modal .modal-wrapper .scores {
+.overlay .modal .modal-wrapper .scores {
   font-family: Macondo;
   color: gold;
   font-size: 2.5em;
@@ -28,16 +38,16 @@
   margin: 50px;
   text-align: center;
 }
-.modal .modal-wrapper .scores .value-time {
+.overlay .modal .modal-wrapper .scores .value-time {
   margin: 0 0 20px 0;
 }
-.modal .modal-wrapper .scores .value-scores {
+.overlay .modal .modal-wrapper .scores .value-scores {
   margin: 20px 0 0 0;
 }
-.modal .modal-wrapper .navigation {
+.overlay .modal .modal-wrapper .navigation {
   margin: 50px 100px 50px 100px;
 }
-.modal .modal-wrapper .navigation nav {
+.overlay .modal .modal-wrapper .navigation nav {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -47,9 +57,9 @@
   font-size: 2em;
   text-shadow: 1px 1px 1px rgb(135, 119, 29);
 }
-.modal .modal-wrapper .navigation nav .modal-btn-leaders {
+.overlay .modal .modal-wrapper .navigation nav .modal-btn-leaders {
   margin: 0 30px 0 0;
 }
-.modal .modal-wrapper .navigation nav .modal-btn-restart {
+.overlay .modal .modal-wrapper .navigation nav .modal-btn-restart {
   margin: 0 0 0 30px;
 }/*# sourceMappingURL=modal.css.map */
