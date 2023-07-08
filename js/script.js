@@ -18,11 +18,10 @@ $(function () {
 			let amountGuessed = $('.card-back.guessed').length;
 			if (amountGuessed === 6) {
 				clearInterval(timerInterval);
+				getWinModal();
 			}
 		}, 1000);
 	}
-	$('.overlay').fadeIn('slow');
-	$('.modal').slideDown('slow');
 
 	function getRandomNum(min, max) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -121,6 +120,17 @@ $(function () {
 		} else {
 			activeCardName = cardName;
 		}
+	}
+
+	function getWinModal() {
+		$('.overlay').fadeIn({
+			start: function () {
+				$(this).css({
+					display: 'flex',
+				});
+			},
+		});
+		$('.modal').slideDown('slow');
 	}
 
 	function init() {
