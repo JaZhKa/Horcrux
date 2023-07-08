@@ -17,8 +17,8 @@ $(function () {
 			mins.text(minsVal < 10 ? '0' + minsVal.toString() : minsVal);
 			let amountGuessed = $('.card-back.guessed').length;
 			if (amountGuessed === 6) {
-				clearInterval(timerInterval);
-				getWinModal();
+					clearInterval(timerInterval);
+					getWinModal();
 			}
 		}, 1000);
 	}
@@ -62,12 +62,10 @@ $(function () {
 			drawCards(card[index]);
 		}
 	}
-	reDrawCards();
 
 	function multiplyCards() {
 		$('.card').clone().appendTo('.cards');
 	}
-	multiplyCards();
 
 	function cardRandomSwap() {
 		const cardsElems = $('.card');
@@ -86,7 +84,6 @@ $(function () {
 			}
 		}
 	}
-	cardRandomSwap();
 
 	function cardFlipChecker(event) {
 		const cardShirt = $(event.currentTarget).find('.card-back'),
@@ -132,13 +129,24 @@ $(function () {
 		});
 		$('.modal').slideDown('slow');
 	}
+	
+	function initialAnim() {
+		$('.field').hide();
+		$('.field').slideDown('slow');
+		$('.card').hide();
+		$('.cards .card:eq(0)').animate({width: 'toggle'}, 300, function(){
+			$(this).next().animate({width: 'toggle'}, 300, arguments.callee);
+			$('.template').hide()
+		});
+	}
 
 	function init() {
-		getTimer();
 		reDrawCards();
 		multiplyCards();
 		cardRandomSwap();
+		initialAnim()
 		$('.face').click(cardFlipChecker);
+		$('.field').one('click', getTimer)
 	}
 	init();
 });

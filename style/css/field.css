@@ -10,8 +10,8 @@ main .main-wrapper .field {
 }
 main .main-wrapper .field .cards {
   display: grid;
-  grid-template-columns: repeat(3, 230px);
-  grid-template-rows: repeat(2, 340px);
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 300px);
   font-family: Macondo;
   color: gold;
   font-size: 1.2em;
@@ -20,5 +20,5 @@ main .main-wrapper .field .cards {
   border: gold solid 8px;
   border-radius: 10px;
   box-shadow: 0 0 20px gold;
-  margin: 20px;
+  margin: 5px;
 }/*# sourceMappingURL=field.css.map */

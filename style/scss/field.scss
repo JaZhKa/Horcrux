@@ -13,12 +13,12 @@ main{
       flex: 1 1 100px;
       .cards{
         display: grid;
-        grid-template-columns: repeat(3, 230px);
-        grid-template-rows: repeat(2, 340px);
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: repeat(2, 300px);
         @include text-style(1.2em);
         column-gap: 10px;
         @include border-style();
-        margin: 20px;
+        margin: 5px;
       }
     }
   }
