@@ -17,8 +17,8 @@ $(function () {
 			mins.text(minsVal < 10 ? '0' + minsVal.toString() : minsVal);
 			let amountGuessed = $('.card-back.guessed').length;
 			if (amountGuessed === 6) {
-					clearInterval(timerInterval);
-					getWinModal();
+				clearInterval(timerInterval);
+				getWinModal();
 			}
 		}, 1000);
 	}
@@ -86,38 +86,73 @@ $(function () {
 	}
 
 	function cardFlipChecker(event) {
+		let thisCard = $(this);
 		const cardShirt = $(event.currentTarget).find('.card-back'),
 			cardFront = $(event.currentTarget).find('.img, .card-info'),
-			cardName = $(event.currentTarget).find('.name').text();
-		cardShirt.addClass('active');
-		cardFront.removeClass('active');
-		if (activeCardName) {
+			cardName = $(event.currentTarget).find('.name').text(),
+			cardShirtGuessed = $('.face').find('.card-back:not(.active, .guessed)'),
+			cardFrontGuessed = $('.face').find(
+				'.img, .active:not(.guessed), .card-info, .active:not(.guessed)'
+				);
+			cardFlipAnimate(thisCard, cardShirt, cardFront)
+			// cardShirt.addClass('active');
+			// cardFront.removeClass('active');
+			// if (thisCard.hasClass('guessed')) {
+			// 	return;
+			// }
+			if (activeCardName) {
 			if (cardName == activeCardName) {
 				const cardShirtActive = $('.face').find('.card-back.active'),
-					cardFrontNonActive = $('.face').find(
+				cardFrontNonActive = $('.face').find(
 						'.img:not(.active), .card-info:not(.active)'
-					);
-				$('.face').each(() => {
-					cardShirtActive.addClass('guessed');
-					cardFrontNonActive.addClass('guessed');
-				});
-			} else {
-				const cardShirtGuessed = $('.face').find('.card-back:not(.guessed)'),
-					cardFrontGuessed = $('.face').find(
-						'.img:not(.guessed), .card-info:not(.guessed)'
-					);
-				setTimeout(() => {
-					$('.face').each(() => {
-						cardShirtGuessed.removeClass('active');
-						cardFrontGuessed.addClass('active');
-					});
-				}, delay);
-			}
-			activeCardName = '';
-		} else {
-			activeCardName = cardName;
-		}
+						);
+						$('.face').each(() => {
+							cardShirtActive.addClass('guessed');
+							cardFrontNonActive.addClass('guessed');
+						});
+					} else {
+
+							setTimeout(() => {
+								thisCard.each(() => {
+									// cardShirtGuessed.removeClass('active');
+									// cardFrontGuessed.addClass('active');
+									cardFlipAnimate(thiscard, cardShirtGuessed, cardFrontGuessed)
+								});
+							}, delay);
+						}
+						activeCardName = '';
+					} else {
+						activeCardName = cardName;
+					}
 	}
+	
+	function cardFlipAnimate(thisCard, cardShirt, cardFront) {
+		thisCard.animate(
+			{
+				animationDeg: 90,
+			},
+			{
+				step: function (currentValue) {
+					thisCard.css('transform', `rotateY(${currentValue}deg)`);
+				},
+				complete: function() {
+					cardShirt.toggleClass('active');
+					cardFront.toggleClass('active');
+					thisCard.animate(
+						{ animationDeg: 0 },
+						{
+							step: function (currentValue) {
+								thisCard.css('transform', `rotateY(${currentValue}deg)`);
+							},
+							duration: 300,
+						}
+						);
+					},
+					duration: 300,
+				}
+				);
+			}
+			// $('.cards').click(cardFlipChecker)
 
 	function getWinModal() {
 		$('.overlay').fadeIn({
@@ -129,14 +164,14 @@ $(function () {
 		});
 		$('.modal').slideDown('slow');
 	}
-	
+
 	function initialAnim() {
 		$('.field').hide();
 		$('.field').slideDown('slow');
 		$('.card').hide();
-		$('.cards .card:eq(0)').animate({width: 'toggle'}, 300, function(){
-			$(this).next().animate({width: 'toggle'}, 300, arguments.callee);
-			$('.template').hide()
+		$('.cards .card:eq(0)').animate({ width: 'toggle' }, 300, function () {
+			$(this).next().animate({ width: 'toggle' }, 300, arguments.callee);
+			$('.template').hide();
 		});
 	}
 
@@ -144,9 +179,9 @@ $(function () {
 		reDrawCards();
 		multiplyCards();
 		cardRandomSwap();
-		initialAnim()
+		initialAnim();
 		$('.face').click(cardFlipChecker);
-		$('.field').one('click', getTimer)
+		$('.field').one('click', getTimer);
 	}
 	init();
 });
@@ -162,30 +197,30 @@ $(function () {
 // }
 
 // Шаг 1: Подготовка ингредиентов
-var mushrooms = 500; // количество грибов в граммах
-var onion = 1; // количество луковицы
-var garlic = 2; // количество зубчиков чеснока
-var butter = 30; // количество грамм сливочного масла
-var broth = 500; // количество миллилитров куриного или овощного бульона
-var cream = 200; // количество миллилитров сливок для взбивания
-var salt = 'по вкусу'; // количество соли
-var pepper = 'по вкусу'; // количество перца и других специй
+// var mushrooms = 500; // количество грибов в граммах
+// var onion = 1; // количество луковицы
+// var garlic = 2; // количество зубчиков чеснока
+// var butter = 30; // количество грамм сливочного масла
+// var broth = 500; // количество миллилитров куриного или овощного бульона
+// var cream = 200; // количество миллилитров сливок для взбивания
+// var salt = 'по вкусу'; // количество соли
+// var pepper = 'по вкусу'; // количество перца и других специй
 
-// Шаг 2: Приготовление супа
-console.log('Шаг 1: Подготовка ингредиентов');
-console.log('Шаг 2: Приготовление супа');
-console.log('- Разогрейте сливочное масло в кастрюле');
-console.log(
-	'- Добавьте нарезанный лук и чеснок, обжарьте до золотистого цвета'
-);
-console.log('- Добавьте грибы, обжаривайте до мягкости');
-console.log('- Влейте бульон, доведите до кипения');
-console.log('- Уменьшите огонь и варите на среднем огне примерно 15-20 минут');
-console.log(
-	'- Используйте блендер или ступку для измельчения супа до гладкой консистенции'
-);
-console.log('- Добавьте сливки и продолжайте готовить еще 5 минут');
-console.log('- Приправьте солью, перцем и другими специями по вкусу');
-console.log('- Подайте горячим, украсив зеленью');
+// // Шаг 2: Приготовление супа
+// console.log('Шаг 1: Подготовка ингредиентов');
+// console.log('Шаг 2: Приготовление супа');
+// console.log('- Разогрейте сливочное масло в кастрюле');
+// console.log(
+// 	'- Добавьте нарезанный лук и чеснок, обжарьте до золотистого цвета'
+// );
+// console.log('- Добавьте грибы, обжаривайте до мягкости');
+// console.log('- Влейте бульон, доведите до кипения');
+// console.log('- Уменьшите огонь и варите на среднем огне примерно 15-20 минут');
+// console.log(
+// 	'- Используйте блендер или ступку для измельчения супа до гладкой консистенции'
+// );
+// console.log('- Добавьте сливки и продолжайте готовить еще 5 минут');
+// console.log('- Приправьте солью, перцем и другими специями по вкусу');
+// console.log('- Подайте горячим, украсив зеленью');
 
-console.log('Готово! Сливочно-грибной суп готов к подаче.');
+// console.log('Готово! Сливочно-грибной суп готов к подаче.');
