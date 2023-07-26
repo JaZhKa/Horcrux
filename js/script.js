@@ -15,7 +15,7 @@ $(function () {
 			minsVal = Math.floor(timer / 60);
 			secs.text(secsVal < 10 ? '0' + secsVal.toString() : secsVal);
 			mins.text(minsVal < 10 ? '0' + minsVal.toString() : minsVal);
-			let amountGuessed = $('.card-back.guessed').length;
+			let amountGuessed = $('.face.guessed').length;
 			if (amountGuessed === 6) {
 				clearInterval(timerInterval);
 				getWinModal();
@@ -86,46 +86,36 @@ $(function () {
 	}
 
 	function cardFlipChecker(event) {
-		let thisCard = $(this);
+		let thisCard = $(this).closest('.face');
 		const cardShirt = $(event.currentTarget).find('.card-back'),
 			cardFront = $(event.currentTarget).find('.img, .card-info'),
-			cardName = $(event.currentTarget).find('.name').text(),
-			cardShirtGuessed = $('.face').find('.card-back:not(.active, .guessed)'),
-			cardFrontGuessed = $('.face').find(
-				'.img, .active:not(.guessed), .card-info, .active:not(.guessed)'
-				);
-			cardFlipAnimate(thisCard, cardShirt, cardFront)
-			// cardShirt.addClass('active');
-			// cardFront.removeClass('active');
-			// if (thisCard.hasClass('guessed')) {
-			// 	return;
-			// }
-			if (activeCardName) {
-			if (cardName == activeCardName) {
-				const cardShirtActive = $('.face').find('.card-back.active'),
-				cardFrontNonActive = $('.face').find(
-						'.img:not(.active), .card-info:not(.active)'
-						);
-						$('.face').each(() => {
-							cardShirtActive.addClass('guessed');
-							cardFrontNonActive.addClass('guessed');
-						});
-					} else {
+			cardName = $(event.currentTarget).find('.name').text();
 
-							setTimeout(() => {
-								thisCard.each(() => {
-									// cardShirtGuessed.removeClass('active');
-									// cardFrontGuessed.addClass('active');
-									cardFlipAnimate(thiscard, cardShirtGuessed, cardFrontGuessed)
-								});
-							}, delay);
-						}
-						activeCardName = '';
-					} else {
-						activeCardName = cardName;
-					}
+		cardFlipAnimate(thisCard, cardShirt, cardFront);
+
+		if (activeCardName) {
+			if (cardName == activeCardName) {
+				setTimeout(() => {
+					$('.face.active').addClass('guessed');
+				}, delay);
+			} else {
+				setTimeout(() => {
+					$('.face.active:not(.guessed)').each(function () {
+						const faceActive = $(this),
+							wrongCardShirt = faceActive.find('.card-back.active'),
+							worngCardFront = faceActive.find(
+								'.img:not(.active), .card-info:not(.active)'
+							);
+						cardFlipAnimate(faceActive, wrongCardShirt, worngCardFront);
+					});
+				}, delay);
+			}
+			activeCardName = '';
+		} else {
+			activeCardName = cardName;
+		}
 	}
-	
+
 	function cardFlipAnimate(thisCard, cardShirt, cardFront) {
 		thisCard.animate(
 			{
@@ -135,7 +125,8 @@ $(function () {
 				step: function (currentValue) {
 					thisCard.css('transform', `rotateY(${currentValue}deg)`);
 				},
-				complete: function() {
+				complete: function () {
+					thisCard.toggleClass('active');
 					cardShirt.toggleClass('active');
 					cardFront.toggleClass('active');
 					thisCard.animate(
@@ -146,13 +137,12 @@ $(function () {
 							},
 							duration: 300,
 						}
-						);
-					},
-					duration: 300,
-				}
-				);
+					);
+				},
+				duration: 300,
 			}
-			// $('.cards').click(cardFlipChecker)
+		);
+	}
 
 	function getWinModal() {
 		$('.overlay').fadeIn({

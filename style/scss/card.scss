@@ -21,6 +21,9 @@ main {
 					max-width: 100%;
 					height: 260px;
 					cursor: pointer;
+					&.guessed{
+						opacity: 0.1;
+					}
 					.card-back {
 						width: 100%;
 						height: 100%;
