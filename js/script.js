@@ -1,12 +1,13 @@
 $(function () {
-	const idCards = [];
-	const delay = 1 * 1000;
-	let activeCardName = '';
+	const idCards = [],
+	delay = 1 * 1000;
+	let activeCardName = '',
+	clicks = 0,
+	timer = 0;
 
 	function getTimer() {
-		let mins = $('#mins'),
-			secs = $('#secs'),
-			timer = 0,
+		let mins = $('.mins'),
+			secs = $('.secs'),
 			timerInterval;
 		clearInterval(timerInterval);
 		timerInterval = setInterval(() => {
@@ -153,6 +154,7 @@ $(function () {
 			},
 		});
 		$('.modal').slideDown('slow');
+		getScores();
 	}
 
 	function initialAnim() {
@@ -165,6 +167,17 @@ $(function () {
 		});
 	}
 
+	$('.field').click(function () {
+		++clicks
+		return clicks
+	})
+
+	function getScores() {
+		secs = $('.timer > .secs').text();
+		scores = parseInt(1000 / (timer + clicks));
+		$('.value-scores').text(scores);
+	}
+	
 	function init() {
 		reDrawCards();
 		multiplyCards();
