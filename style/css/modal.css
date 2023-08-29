@@ -62,10 +62,10 @@
   margin: 20px 0 0 0;
 }
 .overlay .modal .modal-wrapper .value-scores::before {
-  background-image: url(/image/icons/beans.gif);
+  background-image: url("./../../image/icons/beans.gif");
 }
 .overlay .modal .modal-wrapper .value-scores::after {
-  background-image: url(/image/icons/beans.gif);
+  background-image: url("./../../image/icons/beans.gif");
 }
 .overlay .modal .navigation {
   margin: 50px 100px 50px 100px;
