@@ -1,0 +1,24 @@
+main .main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .main-wrapper .field {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 100px;
+}
+main .main-wrapper .field .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 300px);
+  font-family: Macondo;
+  color: gold;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 1px rgb(135, 119, 29);
+  column-gap: 10px;
+  border: gold solid 8px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px gold;
+  margin: 5px;
+}/*# sourceMappingURL=field.css.map */

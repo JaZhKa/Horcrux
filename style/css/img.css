@@ -1,0 +1,35 @@
+body .wrapper .header .header__logo {
+  width: 100px;
+  height: 100px;
+}
+body .wrapper .header .header__logo:hover {
+  background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.262745098), #16064f);
+}
+body .wrapper .header .header__logo img {
+  width: 100%;
+  height: 100%;
+}
+body .wrapper main .main-wrapper .field .card .face .img {
+  flex: 1 1 auto;
+  border-radius: 5px;
+  border-bottom: rgb(105, 75, 0) solid 2px;
+  height: 230px;
+  overflow: hidden;
+}
+body .wrapper main .main-wrapper .field .card .face .img img {
+  width: 100%;
+}
+body .wrapper footer .footer__logo {
+  width: 50px;
+  height: 50px;
+  border-right: gold 2px solid;
+  margin-right: 50px;
+  padding-right: 50px;
+}
+body .wrapper footer .footer__logo img {
+  width: 100%;
+  height: 100%;
+}
+body .wrapper footer .footer__logo img:hover {
+  background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.262745098), #16064f);
+}/*# sourceMappingURL=img.css.map */
