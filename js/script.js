@@ -181,9 +181,6 @@ $(function () {
 	async function playAudio() {
 		await new Promise((resolve, reject) => {
 			resolve((audio = new Audio('sounds/music/HPMainTheme.mp3')));
-			// resolve((audio = new Audio('/sounds/music/HPMainTheme.mp3')));
-			// resolve((audio = new Audio('../sounds/music/HPMainTheme.mp3')));
-			// resolve((audio = new Audio('./../sounds/music/HPMainTheme.mp3')));
 		}).then(
 			(resolve) => {
 				audio.volume = 0.1
