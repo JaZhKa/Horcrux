@@ -1,9 +1,9 @@
 $(function () {
 	const idCards = [],
-	delay = 1 * 1000;
+		delay = 1 * 1000;
 	let activeCardName = '',
-	clicks = 0,
-	timer = 0;
+		clicks = 0,
+		timer = 0;
 
 	function getTimer() {
 		let mins = $('.mins'),
@@ -168,16 +168,28 @@ $(function () {
 	}
 
 	$('.field').click(function () {
-		++clicks
-		return clicks
-	})
+		++clicks;
+		return clicks;
+	});
 
 	function getScores() {
 		secs = $('.timer > .secs').text();
 		scores = parseInt(1000 / (timer + clicks));
 		$('.value-scores').text(scores);
 	}
-	
+
+	async function playAudio() {
+		await new Promise((resolve, reject) => {
+			resolve((audio = new Audio('../sounds/music/HPMainTheme.mp3')));
+		}).then(
+			(resolve) => {
+				audio.volume = 0.1
+				audio.play();
+			},
+			(reject) => console.error('Audio Not Foud')
+			);
+	}
+
 	function init() {
 		reDrawCards();
 		multiplyCards();
@@ -185,6 +197,7 @@ $(function () {
 		initialAnim();
 		$('.face').click(cardFlipChecker);
 		$('.field').one('click', getTimer);
+		$('.field').one('click', playAudio);
 	}
 	init();
 });
