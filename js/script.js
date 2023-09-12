@@ -190,70 +190,70 @@ $(function () {
 			(reject) => console.error('Audio Not Foud')
 		);
 	}
-	
-		$('.next').click(function () {
-			index = circleIndex(index + 1);
-			moveToCard('.next');
-		});
-	
-		$('.prev').click(function () {
-			index = circleIndex(index - 1);
-			moveToCard('.prev');
-		});
-	
-		function moveToCard(blockSelector) {
-			$('.center').animate(
-				{
-					width: 0,
-					height: 0,
-				},
-				delay
-			);
-			$(blockSelector).animate(
-				{
-					width: 160,
-				},
-				delay,
-				'swing',
-				function () {
-					updateCardsBaseOnIndex();
-					$('.center').css({'width': '160px', 'height': '300px'});
-					$(blockSelector).css('width', '160');
-				}
-			);
-		}
-	
-		function updateCardsBaseOnIndex() {
-			let prevIndex = circleIndex(index - 1);
-			let nextIndex = circleIndex(index + 1);
-	
-			$('.prev').find('.name').text(cards[prevIndex].name);
-			$('.prev').find('.description').text(cards[prevIndex].description);
-			$('.prev').find('.front-img').attr('src', cards[prevIndex].img);
-	
-			$('.center').find('.name').text(cards[index].name);
-			$('.center').find('.description').text(cards[index].description);
-			$('.center').find('.front-img').attr('src', cards[index].img);
-	
-			$('.next').find('.name').text(cards[nextIndex].name);
-			$('.next').find('.description').text(cards[nextIndex].description);
-			$('.next').find('.front-img').attr('src', cards[nextIndex].img);
-		}
-	
-		function circleIndex(index) {
-			let goodIndex = index;
-			if (goodIndex < 0) {
-				goodIndex = cards.length - 1;
+
+	$('.next').click(function () {
+		index = circleIndex(index + 1);
+		moveToCard('.next');
+	});
+
+	$('.prev').click(function () {
+		index = circleIndex(index - 1);
+		moveToCard('.prev');
+	});
+
+	function moveToCard(blockSelector) {
+		$('.center').animate(
+			{
+				width: 0,
+				height: 0,
+			},
+			delay
+		);
+		$(blockSelector).animate(
+			{
+				width: 160,
+			},
+			delay,
+			'swing',
+			function () {
+				updateCardsBaseOnIndex();
+				$('.center').css({ width: '160px', height: '300px' });
+				$(blockSelector).css('width', '160');
 			}
-	
-			if (goodIndex >= cards.length) {
-				goodIndex = 0;
-			}
-	
-			return goodIndex;
+		);
+	}
+
+	function updateCardsBaseOnIndex() {
+		let prevIndex = circleIndex(index - 1);
+		let nextIndex = circleIndex(index + 1);
+
+		$('.prev').find('.name').text(cards[prevIndex].name);
+		$('.prev').find('.description').text(cards[prevIndex].description);
+		$('.prev').find('.front-img').attr('src', cards[prevIndex].img);
+
+		$('.center').find('.name').text(cards[index].name);
+		$('.center').find('.description').text(cards[index].description);
+		$('.center').find('.front-img').attr('src', cards[index].img);
+
+		$('.next').find('.name').text(cards[nextIndex].name);
+		$('.next').find('.description').text(cards[nextIndex].description);
+		$('.next').find('.front-img').attr('src', cards[nextIndex].img);
+	}
+
+	function circleIndex(index) {
+		let goodIndex = index;
+		if (goodIndex < 0) {
+			goodIndex = cards.length - 1;
 		}
 
-	$('.gallery').click(function() {
+		if (goodIndex >= cards.length) {
+			goodIndex = 0;
+		}
+
+		return goodIndex;
+	}
+
+	$('.gallery').click(function () {
 		$('.overlay').fadeIn({
 			start: function () {
 				$(this).css({
@@ -262,25 +262,25 @@ $(function () {
 			},
 		});
 		$('.modal.carousel').slideDown('slow');
-	})
+	});
 
-	$('.carousel-back').click(function() {
+	$('.carousel-back').click(function () {
 		$('.modal.carousel').slideUp('slow');
 		$('.overlay').fadeOut();
-	})
+	});
 
 	$('.restart').click(init);
 
-	$('.modal-btn-restart').click(function(e) {
-		e.preventDefault()
+	$('.modal-btn-restart').click(function (e) {
+		e.preventDefault();
 		$('.modal.win').slideUp('slow');
 		$('.overlay').fadeOut();
 		init();
 	});
 
-	$('.modal-btn-leaders').click(function() {
+	$('.modal-btn-leaders').click(function () {
 		alert(`OOPS... This section isn't ready yet. Press "OK" to start over.`);
-	})
+	});
 
 	function init() {
 		reDrawCards();
