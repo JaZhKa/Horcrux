@@ -271,7 +271,8 @@ $(function () {
 
 	$('.restart').click(init);
 
-	$('.modal-btn-restart').click(function() {
+	$('.modal-btn-restart').click(function(e) {
+		e.preventDefault()
 		$('.modal.win').slideUp('slow');
 		$('.overlay').fadeOut();
 		init();

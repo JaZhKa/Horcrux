@@ -17,7 +17,8 @@ main .main-wrapper .field .card .face {
   cursor: pointer;
 }
 main .main-wrapper .field .card .face.guessed {
-  opacity: 0.1;
+  opacity: 0.5;
+  transition: opacity 2s;
 }
 main .main-wrapper .field .card .face .card-back {
   width: 100%;

@@ -13,7 +13,8 @@ main {
 				.face {
 					@include card-face-style(100%);
 					&.guessed {
-						opacity: 0.1;
+						opacity: 0.5;
+						transition: opacity 2s;
 					}
 					.card-back {
 						width: 100%;
