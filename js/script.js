@@ -269,10 +269,12 @@ $(function () {
 		$('.overlay').fadeOut();
 	});
 
-	$('.restart').click(init);
+	$('.restart').click(function () {
+		location.reload();
+		return false;
+	});
 
-	$('.modal-btn-restart').click(function (e) {
-		e.preventDefault();
+	$('.modal-btn-restart').click(function () {
 		$('.modal.win').slideUp('slow');
 		$('.overlay').fadeOut();
 		init();
