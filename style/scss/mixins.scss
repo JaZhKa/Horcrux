@@ -24,3 +24,35 @@
 	background-size: contain;
 	@include mix-size($fx, $fy);
 }
+
+@mixin card-face-style($fmw) {
+	display: flex;
+	flex-direction: column;
+	border: 10px solid rgb(105, 75, 0);
+	border-radius: 10px;
+	box-shadow: 5px 5px 10px black;
+	margin: 5px;
+	align-items: center;
+	max-width: $fmw;
+	height: 260px;
+	cursor: pointer;
+}
+
+@mixin card-img-style() {
+	flex: 1 1 auto;
+	border-radius: 5px;
+	border-bottom:rgb(105, 75, 0) solid 2px;
+	height: 230px;
+	overflow: hidden;
+	img{
+		width: 100%;
+	}
+}
+
+@mixin modal-style() {
+	display: none;
+	position: fixed;
+	background-color: $primary-main-color;
+	z-index: 20;
+	@include border-style();
+}

@@ -21,6 +21,12 @@ body {
 			box-shadow: 0 10px 50px black;
 			z-index: 10;
       @include text-style(2em);
+			.header__navigation{
+				nav{
+					display: flex;;
+					flex-direction: column;
+				}
+			}
 		}
 		main {
 			flex: 1 1 auto;

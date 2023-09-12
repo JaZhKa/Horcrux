@@ -25,6 +25,11 @@ body .wrapper header {
   font-size: 2em;
   text-shadow: 1px 1px 1px rgb(135, 119, 29);
 }
+html .wrapper header .header__navigation nav,
+body .wrapper header .header__navigation nav {
+  display: flex;
+  flex-direction: column;
+}
 html .wrapper main,
 body .wrapper main {
   flex: 1 1 auto;

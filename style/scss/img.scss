@@ -1,5 +1,7 @@
 @import 'variables.scss';
 
+@import 'mixins.scss';
+
 body {
 	.wrapper {
 		.header {
@@ -21,14 +23,7 @@ body {
 					.card{
 						.face{
 							.img{
-								flex: 1 1 auto;
-								border-radius: 5px;
-								border-bottom:rgb(105, 75, 0) solid 2px;
-								height: 230px;
-								overflow: hidden;
-								img{
-									width: 100%;
-								}
+							@include card-img-style();
 							}
 						}
 					}

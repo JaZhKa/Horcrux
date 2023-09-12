@@ -1,0 +1,40 @@
+@import 'mixins';
+
+.modal.carousel {
+  @include modal-style();
+	.carousel-wrapper {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		align-items: center;
+		padding: 2rem;
+    .navigation {
+      nav {
+        button {
+          font-size: 2rem;
+          margin: 1rem;
+        }
+      }
+    }
+		.carousel {
+      display: flex;
+			align-items: center;
+			.carousel-face {
+				@include card-face-style(10rem);
+				&.pvev &.next {
+					@include mix-size(100px, 180px);
+				}
+				&.center {
+					@include mix-size(160px, 280px)
+				}
+				.img {
+					@include card-img-style();
+				}
+				p {
+					text-align: justify;
+					@include text-style(1em);
+				}
+			}
+		}
+	}
+}

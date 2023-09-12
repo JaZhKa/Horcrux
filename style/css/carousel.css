@@ -1,0 +1,61 @@
+.modal.carousel {
+  display: none;
+  position: fixed;
+  background-color: #16064f;
+  z-index: 20;
+  border: gold solid 8px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px gold;
+}
+.modal.carousel .carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 2rem;
+}
+.modal.carousel .carousel-wrapper .navigation nav button {
+  font-size: 2rem;
+  margin: 1rem;
+}
+.modal.carousel .carousel-wrapper .carousel {
+  display: flex;
+  align-items: center;
+}
+.modal.carousel .carousel-wrapper .carousel .carousel-face {
+  display: flex;
+  flex-direction: column;
+  border: 10px solid rgb(105, 75, 0);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px black;
+  margin: 5px;
+  align-items: center;
+  max-width: 10rem;
+  height: 260px;
+  cursor: pointer;
+}
+.modal.carousel .carousel-wrapper .carousel .carousel-face.pvev .modal.carousel .carousel-wrapper .carousel .carousel-face.next {
+  width: 100px;
+  height: 180px;
+}
+.modal.carousel .carousel-wrapper .carousel .carousel-face.center {
+  width: 160px;
+  height: 280px;
+}
+.modal.carousel .carousel-wrapper .carousel .carousel-face .img {
+  flex: 1 1 auto;
+  border-radius: 5px;
+  border-bottom: rgb(105, 75, 0) solid 2px;
+  height: 230px;
+  overflow: hidden;
+}
+.modal.carousel .carousel-wrapper .carousel .carousel-face .img img {
+  width: 100%;
+}
+.modal.carousel .carousel-wrapper .carousel .carousel-face p {
+  text-align: justify;
+  font-family: Macondo;
+  color: gold;
+  font-size: 1em;
+  text-shadow: 1px 1px 1px rgb(135, 119, 29);
+}/*# sourceMappingURL=carousel.css.map */

@@ -38,7 +38,8 @@
 				</div>
 				<div class="header__navigation">
 					<nav>
-						<button class="header__nav__btn">Restart</button>
+						<button class="header__nav__btn restart">Restart</button>
+						<button class="gallery">Gallery</button>
 					</nav>
 				</div>
 				<div class="right"></div>
@@ -53,14 +54,14 @@
 									<img
 										class="back"
 										src="./image/cards/13.jpg"
-										alt=""
+										alt="shirt of card"
 									/>
 								</div>
 								<div class="img active">
 									<img
 										class="front-img"
 										src="./image/cards/1.jpg"
-										alt=""
+										alt="Harry Potter"
 									/>
 								</div>
 								<div class="card-info active">
@@ -72,23 +73,79 @@
 						</div>
 					</div>
 					<div class="overlay">
-						<form class="modal">
+						<form class="modal win">
 							<div class="modal-wrapper">
 								<section class="congratulation">
 									<h1>YOU WIN!</h1>
 								</section>
 								<section class="scores">
-									<h2 class="value-time">Time: <span class="mins"></span><span>:</span><span class="secs"></span></h2>
+									<h2 class="value-time">
+										Time: <span class="mins"></span><span>:</span
+										><span class="secs"></span>
+									</h2>
 									<h2 class="value-scores icon"></h2>
 								</section>
 								<section class="navigation">
 									<nav>
-										<button class="	">Leaderbord</button>
+										<button class="modal-btn-leaders">Leaderbord</button>
 										<button class="modal-btn-restart">Restart</button>
 									</nav>
 								</section>
 							</div>
 						</form>
+						<div class="modal carousel">
+							<div class="carousel-wrapper">
+								<section class="carousel">
+									<div class="carousel-face prev">
+										<div class="img">
+											<img
+												class="front-img"
+												src="./image/cards/6.jpg"
+												alt="Professor Albus Percival Wulfric Brian Dumbledore"
+											/>
+										</div>
+										<div class="card-info">
+											<p class="name">Professor Albus Percival Wulfric Brian Dumbledore</p>
+											<br />
+											<p class="description"></p>
+										</div>
+									</div>
+									<div class="carousel-face center">
+										<div class="img">
+											<img
+												class="front-img"
+												src="./image/cards/1.jpg"
+												alt="Harry Potter"
+											/>
+										</div>
+										<div class="card-info">
+											<p class="name">Harry Potter</p>
+											<br />
+											<p class="description">The Boy Who Lived.</p>
+										</div>
+									</div>
+									<div class="carousel-face next">
+										<div class="img">
+											<img
+												class="front-img"
+												src="./image/cards/2.jpg"
+												alt="Ronald Weasley"
+											/>
+										</div>
+										<div class="card-info">
+											<p class="name">Ronald Weasley</p>
+											<br />
+											<p class="description">You'll pay for that one, Malfoy!</p>
+										</div>
+									</div>
+								</section>
+								<section class="navigation">
+									<nav>
+										<button class="carousel-back">Back</button>
+									</nav>
+								</section>
+							</div>
+						</div>
 					</div>
 				</div>
 			</main>

@@ -11,17 +11,8 @@ main {
 			.card {
 				max-width: 100%;
 				.face {
-					display: flex;
-					flex-direction: column;
-					border: 10px solid rgb(105, 75, 0);
-					border-radius: 10px;
-					box-shadow: 5px 5px 10px black;
-					margin: 5px;
-					align-items: center;
-					max-width: 100%;
-					height: 260px;
-					cursor: pointer;
-					&.guessed{
+					@include card-face-style(100%);
+					&.guessed {
 						opacity: 0.1;
 					}
 					.card-back {
